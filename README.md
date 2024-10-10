@@ -1,12 +1,202 @@
 # ESADE MiBA 2025 Group 4 - Artificial Intelligence - Assignment 1: Data Preparation
 
 # Description
-    Superheroes have been in popular culture for a long time, and now more than ever. Since its creation, superheroes have not been diverse, but this is changing rapidly. The two          datasets aim to provide an overview of heroes and their physical and power characteristics, helping curious people to identify trends and patterns. In this case, we want to             understand how physical attributes and powers define superheroes' alignment (superhero, supervillain).
-    The columns included in both datasets are: 
-    - **Dataset part 1**: Name, Gender, Eye color, Race, Hair color, Height, Publisher, Skin color, Alignment, Weight,Has Superpowers, Power Level, Intelligence Level
-    - **Dataset part 2**: Previous columns and, Agility, Accelerated Healing, Lantern Power Ring, Dimensional Awareness, Cold Resistance, Durability, Stealth, Energy Absorption, Flight, Danger Sense, Underwater breathing, Marksmanship, Weapons Master, Power Augmentation, Animal Attributes, Longevity, Intelligence, Super Strength, Cryokinesis, Telepathy, Energy Armor, Energy Blasts, Duplication, Size Changing, Density Control, Stamina, Astral Travel,Audio Control, Dexterity, Omnitrix, Super Speed, Possession, Animal Oriented Powers, Weapon-based Powers, Electrokinesis, Darkforce Manipulation, Death Touch, Teleportation, Enhanced Senses, Telekinesis, Energy Beams, Magic, Hyperkinesis, Jump, Clairvoyance, Dimensional Travel, Power Sense, Shapeshifting, Peak Human Condition, Immortality, Camouflage, Element Control, Phasing, Astral Projection, Electrical Transport, Fire Control,Projection, Summoning, Enhanced Memory, Reflexes, Invulnerability, Energy Constructs, Force Fields, Self-Sustenance ,Anti-Gravity, Empathy, Power Nullifier, Radiation Control, Psionic Powers, Elasticity, Substance Secretion, Elemental Transmogrification, Technopath/Cyberpath, Photographic Reflexes, Seismic Power, Animation, Precognition, Mind Control, Fire Resistance, Power Absorption, Enhanced Hearing, Nova Force, Insanity, Hypnokinesis, Animal Control, Natural Armor, Intangibility, Enhanced Sight, Molecular Manipulation, Heat Generation, Adaptation, Gliding, Power Suit, Mind Blast, Probability Manipulation, Gravity Control, Regeneration, Light Control, Echolocation, Levitation, Toxin and Disease Control, Banish, Energy Manipulation, Heat Resistance, Natural Weapons, Time Travel, Enhanced Smell, Illusions, Thirstokinesis, Hair Manipulation, Illumination, Omnipotent, Cloaking, Changing Armor, Power Cosmic, Biokinesis, Water Control, Radiation Immunity, Vision - Telescopic, Toxin and Disease Resistance, Spatial Awareness, Energy Resistance, Telepathy Resistance, Molecular Combustion, Omnilingualism, Portal Creation, Magnetism, Mind Control Resistance, Plant Control, Sonar, Sonic Scream, Time Manipulation, Enhanced Touch, Magic Resistance, Invisibility, Sub-Mariner, Radiation Absorption, Intuitive aptitude, Vision - Microscopic, Melting, Wind Control, Super Breath, Wallcrawling, Vision - Night, Vision - Infrared, Grim Reaping, Matter Absorption, The Force, Resurrection, Terrakinesis, Vision - Heat, Vitakinesis, Radar Sense, Qwardian Power Ring, Weather Control, Vision - X-Ray, Vision - Thermal, Web Creation, Reality Warping, Odin Force, Symbiote Costume, Speed Force, Phoenix Force, Molecular Dissipation, Vision - Cryo, Omnipresent, Omniscient.
 
-    Column names are self-explanatory. Physical attributes are numerical or categorical, while superpowers are dummy (Onehot) variables.
-    What are the characteristics of your favorite superheroes? Are these characteristics affecting superheroes' alignment? Let's put some light on this important business question.
+Superheroes have been a significant part of popular culture for a long time, and now more than ever. Historically, superheroes have not been diverse, but this is changing rapidly. These two datasets aim to provide an overview of heroes, focusing on their physical and power characteristics, helping curious individuals identify trends and patterns. The primary goal is to understand how physical attributes and superpowers define superheroes' alignment (superhero, supervillain).
 
+## Dataset Overview
 
+The columns included in both datasets are:
+
+### **Dataset Part 1:**
+- Name
+- Gender
+- Eye Color
+- Race
+- Hair Color
+- Height
+- Publisher
+- Skin Color
+- Alignment
+- Weight
+- Has Superpowers
+- Power Level
+- Intelligence Level
+
+### **Dataset Part 2:**
+Includes all columns from **Part 1** plus the following superpowers:
+- Agility
+- Accelerated Healing
+- Lantern Power Ring
+- Dimensional Awareness
+- Cold Resistance
+- Durability
+- Stealth
+- Energy Absorption
+- Flight
+- Danger Sense
+- Underwater Breathing
+- Marksmanship
+- Weapons Master
+- Power Augmentation
+- Animal Attributes
+- Longevity
+- Intelligence
+- Super Strength
+- Cryokinesis
+- Telepathy
+- Energy Armor
+- Energy Blasts
+- Duplication
+- Size Changing
+- Density Control
+- Stamina
+- Astral Travel
+- Audio Control
+- Dexterity
+- Omnitrix
+- Super Speed
+- Possession
+- Animal-Oriented Powers
+- Weapon-based Powers
+- Electrokinesis
+- Darkforce Manipulation
+- Death Touch
+- Teleportation
+- Enhanced Senses
+- Telekinesis
+- Energy Beams
+- Magic
+- Hyperkinesis
+- Jump
+- Clairvoyance
+- Dimensional Travel
+- Power Sense
+- Shapeshifting
+- Peak Human Condition
+- Immortality
+- Camouflage
+- Element Control
+- Phasing
+- Astral Projection
+- Electrical Transport
+- Fire Control
+- Projection
+- Summoning
+- Enhanced Memory
+- Reflexes
+- Invulnerability
+- Energy Constructs
+- Force Fields
+- Self-Sustenance
+- Anti-Gravity
+- Empathy
+- Power Nullifier
+- Radiation Control
+- Psionic Powers
+- Elasticity
+- Substance Secretion
+- Elemental Transmogrification
+- Technopath/Cyberpath
+- Photographic Reflexes
+- Seismic Power
+- Animation
+- Precognition
+- Mind Control
+- Fire Resistance
+- Power Absorption
+- Enhanced Hearing
+- Nova Force
+- Insanity
+- Hypnokinesis
+- Animal Control
+- Natural Armor
+- Intangibility
+- Enhanced Sight
+- Molecular Manipulation
+- Heat Generation
+- Adaptation
+- Gliding
+- Power Suit
+- Mind Blast
+- Probability Manipulation
+- Gravity Control
+- Regeneration
+- Light Control
+- Echolocation
+- Levitation
+- Toxin and Disease Control
+- Banish
+- Energy Manipulation
+- Heat Resistance
+- Natural Weapons
+- Time Travel
+- Enhanced Smell
+- Illusions
+- Thirstokinesis
+- Hair Manipulation
+- Illumination
+- Omnipotent
+- Cloaking
+- Changing Armor
+- Power Cosmic
+- Biokinesis
+- Water Control
+- Radiation Immunity
+- Vision - Telescopic
+- Toxin and Disease Resistance
+- Spatial Awareness
+- Energy Resistance
+- Telepathy Resistance
+- Molecular Combustion
+- Omnilingualism
+- Portal Creation
+- Magnetism
+- Mind Control Resistance
+- Plant Control
+- Sonar
+- Sonic Scream
+- Time Manipulation
+- Enhanced Touch
+- Magic Resistance
+- Invisibility
+- Sub-Mariner
+- Radiation Absorption
+- Intuitive Aptitude
+- Vision - Microscopic
+- Melting
+- Wind Control
+- Super Breath
+- Wall-Crawling
+- Vision - Night
+- Vision - Infrared
+- Grim Reaping
+- Matter Absorption
+- The Force
+- Resurrection
+- Terrakinesis
+- Vision - Heat
+- Vitakinesis
+- Radar Sense
+- Qwardian Power Ring
+- Weather Control
+- Vision - X-Ray
+- Vision - Thermal
+- Web Creation
+- Reality Warping
+- Odin Force
+- Symbiote Costume
+- Speed Force
+- Phoenix Force
+- Molecular Dissipation
+- Vision - Cryo
+- Omnipresent
+- Omniscient
+
+### Column Notes:
+- Physical attributes are either numerical or categorical.
+- Superpowers are represented as dummy (OneHot) variables.
+
+## Business Question
+
+What are the characteristics of your favorite superheroes? Are these characteristics affecting superheroes' alignment? Let's shed some light on this important question!
